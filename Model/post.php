@@ -66,24 +66,24 @@ interface interfacePost {
 
     public function editPost(Post $objPost);
 
-    public function delPost(Post $objPost);
+    public function delPost($codigo);
 }
 
 ////Modelo////
 class MPost implements interfacePost {
 
     public function getPostCodigo($codigo) {
-        $result = mysql_query("select * from posts where codigo=" . $codigo);
+        $result = mysql_query("SELECT * FROM posts WHERE codigo=" . $codigo);
         return $result;
     }
 
     public function getPost(Post $objPost) {
-        $result = mysql_query("select * from posts");
+        $result = mysql_query("SELECT * FROM posts");
         return $result;
     }
 
     public function insertPost(Post $objPost) {
-        $sql = "insert into posts (titulo, texto, data) values ('" . $objPost->getTitulo() . "','" . $objPost->getTexto() . "','" . $objPost->getData() . "')";
+        $sql = "INSERT INTO posts (titulo, texto, data) VALUES ('" . $objPost->getTitulo() . "','" . $objPost->getTexto() . "','" . $objPost->getData() . "')";
         $result = mysql_query($sql);
         if (!$result) {
             die('Erro na inclusão<br>' . mysql_error());
@@ -93,7 +93,7 @@ class MPost implements interfacePost {
     }
 
     public function editPost(Post $objPost) {
-        $sql = "update posts set titulo = '" . $objPost->getTitulo() ."', texto= '" . $objPost->getTexto() . "' where
+        $sql = "UPDATE posts SET titulo = '" . $objPost->getTitulo() ."', texto= '" . $objPost->getTexto() . "' WHERE
         codigo=" . $objPost->getCodigo();
         $result = mysql_query($sql);
         if (!$result) {
@@ -103,8 +103,8 @@ class MPost implements interfacePost {
         }
     }
 
-    public function delPost(Post $objPost) {
-        $sql = "delete from posts where codigo=" . $objPost->getCodigo() . ";";
+    public function delPost($codigo) {
+        $sql = "DELETE FROM posts WHERE codigo = " . $codigo . ";";
         $result = mysql_query($sql);
         if (!$result) {
             die('Erro na exclusão<br>' . mysql_error());

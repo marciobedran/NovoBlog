@@ -28,10 +28,10 @@ class CPost extends Post {
         return $objetoPost->editPost($objPost);
     }
 
-    public function delPost(Post $objPost) {
+    public function delPost($codigo) {
 
         $objetoPost = new MPost();
-        return $objetoPost->delPost($objPost);
+        return $objetoPost->delPost($codigo);
     }
 
 }

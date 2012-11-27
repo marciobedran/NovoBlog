@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html> 
-    <head>
-        <meta charset = "utf-8">
-        <title>Novo Blog<title> 
-    </head> 
-    <body>
-        <?php
-        include("C:\wamp\www\NovoBlog\Controller\controle.php");        
-        ?>
-    </body>
-</html>
+<?php
+
+include("C:\wamp\www\NovoBlog\Controller\controle.php");
+$codigo = $_GET["cod"];
+$objCPost = new CPost;
+$objCPost->delPost($codigo);
+
+?>
