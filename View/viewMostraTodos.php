@@ -14,7 +14,7 @@
             echo "<p align='center'>" . $row[2] . "</p>";
             echo "<p align='center'>" . $row[3] . "</p>";
             echo "<p align='right'><a href='/NovoBlog/View/viewEditarPost.php?cod=$row[0]'>Editar</a>
-            <a href='/NovoBlog/View/viewExcluiPost.php?cod=$row[0]'>Excluir</a><p><br>";
+            <a href='/NovoBlog/View/controleExcluirPost.php?cod=$row[0]'>Excluir</a><p><br>";
         }
         ?>
     </body> 
