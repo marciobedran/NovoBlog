@@ -10,10 +10,10 @@ class CPost extends Post {
         return $objetoPost->getPostCodigo($codigo);
     }
 
-    public function getPost(Post $objPost) {
+    public function getPost() {
 
         $objetoPost = new MPost();
-        return $objetoPost->getPost($objPost);
+        return $objetoPost->getPost();
     }
 
     public function insertPost(Post $objPost) {

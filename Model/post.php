@@ -60,7 +60,7 @@ interface interfacePost {
 
     public function getPostCodigo($codigo);
 
-    public function getPost(Post $objPost);
+    public function getPost();
 
     public function insertPost(Post $objPost);
 
@@ -77,7 +77,7 @@ class MPost implements interfacePost {
         return $result;
     }
 
-    public function getPost(Post $objPost) {
+    public function getPost() {
         $result = mysql_query("SELECT * FROM posts");
         return $result;
     }

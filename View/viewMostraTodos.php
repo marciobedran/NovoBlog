@@ -8,7 +8,7 @@
         <?php
         include("C:\wamp\www\NovoBlog\Controller\controle.php");
         $objPost = new CPost();
-        $resultado = $objPost->getPost($objPost);
+        $resultado = $objPost->getPost();
         while ($row = mysql_fetch_row($resultado)) {
             echo "<p align='center'>" . $row[1] . "</p>";
             echo "<p align='center'>" . $row[2] . "</p>";
